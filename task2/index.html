@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CodeSoft Learning</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    color: white;
+}
+
+/* HOME BACKGROUND IMAGE */
+.home-bg {
+    background: url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* LIGHT OVERLAY */
+.overlay {
+    background: rgba(0,0,0,0.5);
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: rgba(0,0,0,0.7);
+    box-shadow: 0 0 15px cyan;
+}
+
+header h1 {
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: cyan;
+}
+
+/* PAGE SWITCH */
+.page {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 50px;
+    text-shadow: 0 0 15px cyan;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: cyan;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 15px cyan;
+    font-weight: bold;
+}
+
+/* FEATURES */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px purple;
+}
+
+/* COURSE */
+.container {
+    padding: 30px;
+    background: #0f2027;
+}
+
+.section {
+    background: rgba(0,0,0,0.7);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* COLUMNS */
+.columns {
+    display: flex;
+    gap: 20px;
+}
+
+.box {
+    flex: 1;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .features, .columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h2 {
+        font-size: 35px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>⚡ CodeSoft</h1>
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('course')">Course</a>
+    </nav>
+</header>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active home-bg">
+<div class="overlay">
+
+<section class="hero">
+    <h2>LANDING PAGE</h2>
+
+    <p>
+1. Build a web page using HTML and CSS.<br><br>
+
+2. Learn to make columns, divide sections, and add headers & footers.<br><br>
+
+3. Focus on design creativity – alignments, padding, color palette, boxes, etc.<br><br>
+
+4. Use CSS carefully to prevent overlapping elements.<br><br>
+
+5. Make the page visually appealing and user-friendly.<br><br>
+
+6. Click the “CLICK HERE” button below for a demo landing page.
+    </p>
+
+    <button class="btn" onclick="showPage('course')">
+        CLICK HERE
+    </button>
+</section>
+
+<section class="features">
+    <div class="card">HTML Structure</div>
+    <div class="card">CSS Styling</div>
+    <div class="card">Responsive Design</div>
+</section>
+
+</div>
+</div>
+
+<!-- COURSE PAGE -->
+<div id="course" class="page">
+<div class="container">
+
+<div class="section">
+<h2>1. What is HTML?</h2>
+<p>HTML is used to create structure of webpage.</p>
+<pre>&lt;h1&gt;Hello World&lt;/h1&gt;</pre>
+</div>
+
+<div class="section">
+<h2>2. What is CSS?</h2>
+<p>CSS is used to style webpage.</p>
+<pre>h1 { color: red; }</pre>
+</div>
+
+<div class="section">
+<h2>3. Columns</h2>
+<div class="columns">
+<div class="box">Column 1</div>
+<div class="box">Column 2</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<footer>
+<p>© CodeSoft Learning</p>
+</footer>
+
+<script>
+function showPage(pageId) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.getElementById(pageId).classList.add("active");
+}
+</script>
+
+</body>
+</html>
